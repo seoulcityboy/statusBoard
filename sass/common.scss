@@ -1,0 +1,178 @@
+@charset "UTF-8";
+$colorGray: #EEE;
+$colorGray1: #FCFCFC;
+$colorGray2: #F8F8F8;
+$borderGray:#E0E0E0;
+$baseFont:#777;
+$vricks:#FF461D;
+$tit:#333;
+$red:#B90B0B;
+$white:#FFF;
+
+html,body,div, h1, h2, h3, h4, h5, h6, p, a ,img, strong, em, span, table, tbody,thead, tfoot, caption, tr, th, td, fieldset,
+dl,dt,dd, ol,ul,li{margin:0; padding:0; border:none;}
+ul, ol, li{list-style:none}
+caption, legend {overflow:hidden; visibility:hidden; width:0; height:0;  font-size:0; line-height:0; text-indent:-999px;}
+img{font-size:0; line-height:0; vertical-align: middle;}
+html,body{height:100%;}
+table{border-collapse: collapse;
+	td{word-wrap:break-word;word-break:break-all;}
+}
+body{font-size:16px; line-height:24px; font-family:tahoma,sans-serif; color:$baseFont;}
+
+#wrap{position: relative; height:100%;
+	padding:0 10px; font-size:0.75em; line-height:1.5em;
+	header{position: relative; height:40px; padding-top:20px; background:$vricks;
+		.logo{padding-left: 20px; color:$white; font-size:2em; font-weight:bold; line-height: 0.75em;}
+		ul{position: absolute; right:20px; top:20px; display: table;
+			li{display: table-cell; padding:0 5px;
+				&.on{
+					a{font-weight:bold;}
+				}
+				a{color:$white;}
+			}
+		}
+		&:before{content:""; display:block; position: absolute; top:0; left:-10px; width:10px; height:100%; background:$vricks;}
+		&:after{content:""; display:block; position: absolute; top:0; right:-10px; width:10px; height:100%; background:$vricks;}
+	}
+	h1{display:block; padding-top:20px; color:$tit; font-family:Georgia,sans-serif; font-style: italic; font-size:2.333em; line-height:1em;}
+	section{margin-top:20px; margin-bottom:30px;}
+	footer{}
+}
+#comment{
+	article {
+		h2 {
+			color: $tit;
+			font-size: 1.667em;
+			font-weight: normal;
+			line-height: 1.4em;
+			vertical-align: top;
+			span {
+				color: $red;
+				font-size: 0.55em;
+				vertical-align: top;
+			}
+		}
+		div {
+			margin: 10px 0 20px;
+			padding:5px;
+			border: 1px dashed $borderGray;
+			background: $colorGray1;
+			h3 {
+				margin:5px 0;
+			}
+			p {
+				position: relative;
+				padding-left: 9px;
+				&:before {
+					content: "#";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+}
+#coding{
+	article {
+		h2 {
+			color: $tit;
+			font-size: 1.667em;
+			font-weight: normal;
+			line-height: 1.4em;
+			vertical-align: top;
+			span {
+				color: $red;
+				font-size: 0.55em;
+				vertical-align: top;
+			}
+		}
+		.comment {
+			margin: 10px 0 20px;
+			border: 1px dashed $borderGray;
+			background: $colorGray1;
+			p {
+				position: relative;
+				padding-left: 9px;
+				&:before {
+					content: "#";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+}
+
+#statusBoard{
+	article{
+		&.board{
+			margin-top:20px;
+			&>p{margin:5px 0;}
+		}
+		table{min-width:680px; width:100%; border-top:1px solid $borderGray;
+			thead{
+				th{padding:5px 0; font-weight:normal; border-right:1px solid $borderGray; border-bottom:1px solid $borderGray; background:$colorGray;
+					&:first-child{border-left:1px solid $borderGray;}
+				}
+			}
+			tbody{
+				tr{
+					td{border-right:1px solid $borderGray;border-bottom:1px solid $borderGray;
+						padding:5px 0 5px 10px;
+						background:$colorGray1;
+						&:nth-child(4),&:nth-child(5){padding-left:0; text-align: center;}
+						&:first-child{border-left:1px solid $borderGray;}
+						&.done{background:#EAF5E1;}
+						&.undone{background:#FEEEEE;}
+					}
+					&:nth-of-type(even){
+						td{
+							background:$colorGray2;
+							&.done{background:#EAF5E1;}
+							&.undone{background:#FEEEEE;}
+						}
+					}
+				}
+			}
+			tfoot{
+				tr {
+					th{ padding:3px 10px 3px 0; text-align: right;
+						border-left:1px solid $borderGray;border-right:1px solid $borderGray;border-bottom:1px solid $borderGray;
+					}
+					td{padding:3px 20px 3px 0; text-align: right;
+						border-right:1px solid $borderGray;border-bottom:1px solid $borderGray; background:$colorGray1;
+					}
+					&:first-child {
+						th {
+							color: #5F8B33;
+							background: #EAF5E1;
+						}
+					}
+					&:nth-child(2) {
+						th {
+							color: $red;
+							background: #FEEEEE;
+						}
+					}
+					&:nth-child(3) {
+						th {
+							color: #F2AC1A;
+							background: #FFFBE5;
+						}
+					}
+					&:nth-of-type(even) {
+						td {
+							background: $colorGray2;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
